@@ -9,18 +9,19 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	description.firstChild.textContent = shortText; 
 
-	let expanded = false;
 	toggleLink.addEventListener( 'click', function ( e ) {
 		e.preventDefault();
 
+		const expanded = toggleLink.getAttribute( 'aria-expanded' ) === 'true';
+
 		if ( expanded ) {
 			description.firstChild.textContent = shortText;
+			toggleLink.setAttribute( 'aria-expanded', 'false' );
 			toggleLink.textContent = 'Expand';
-			expanded = false;
 		} else {
 			description.firstChild.textContent = fullText + ' ';
+			toggleLink.setAttribute( 'aria-expanded', "true" );
 			toggleLink.textContent = 'Collapse';
-			expanded = true;
 		}
 	} );
 } );
