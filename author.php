@@ -71,7 +71,7 @@
 			</section>
 			<section class="author-meta-description">
 				<h2>About <?php the_author_meta( 'display_name' ); ?></h2>
-				<div><?php the_author_meta( 'description' ); ?></div>
+				<div><?php the_author_meta( 'description' ); ?> <a href="#" id="toggleLink">Expand</a></div>
 			</section>
 			<section class="latest-posts">
 				<h2>Latest Posts from <?php the_author_meta( 'first_name' ); ?></h2>
@@ -122,6 +122,8 @@
 				wp_reset_postdata();
 				?>
 			</ul>
+
+			<a href="<?php echo site_url( 'news/' ); ?>" id="show-all-news">Show all news</a>
 		</aside>
 
 	</div>

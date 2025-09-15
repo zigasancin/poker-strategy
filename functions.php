@@ -30,6 +30,9 @@ class Poker_Strategy {
 		add_action( 'personal_options_update', array( $this, 'save_extra_user_profile_fields' ) );
 		add_action( 'edit_user_profile_update', array( $this, 'save_extra_user_profile_fields' ) );
 		add_action( 'user_edit_form_tag', array( $this, 'enctype' ) );
+
+		add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+		add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
 	}
 
 	/*
@@ -182,6 +185,30 @@ class Poker_Strategy {
 	 */
 	public function enctype() {
 		echo ' enctype="multipart/form-data"';
+	}
+
+	/*
+	 * Overrides the excerpt length.
+	 *
+	 * @since 1.1
+	 *
+	 * @param  int  $length Existing excerpt length value.
+	 * @return int
+	 */
+	public function excerpt_length( $length ) {
+		return 20;
+	}
+
+	/*
+	 * Overrides the excerpt_more filter.
+	 *
+	 * @since 1.1
+	 *
+	 * @param  string $more Existing excerpt more value.
+	 * @return void
+	 */
+	public function excerpt_more( $more ) {
+		return '...';
 	}
 }
 

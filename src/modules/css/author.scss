@@ -86,6 +86,11 @@ body.author .container{
 			h2 {
 				margin-top: 0;
 			}
+
+			#toggleLink {
+				color: #006cb0;
+				text-decoration: none;
+			}
 		}
 
 		.latest-posts {
@@ -97,13 +102,13 @@ body.author .container{
 
 				li {
 					align-items: flex-start;
-					border-top: 1px solid #dfdfdf;
+					border-bottom: 1px solid #dfdfdf;
 					display: flex;
 					margin-top: 20px;
 					padding-top: 20px;
+					padding-bottom: 10px;
 
 					&:first-of-type {
-						border-top: none;
 						padding-top: 0;
 					}
 
@@ -143,7 +148,7 @@ body.author .container{
 			}
 
 			.pagination {
-				margin-top: 40px;
+				margin-top: 20px;
 
 				ul {
 					display: flex;
@@ -206,8 +211,10 @@ body.author .container{
 		padding: 40px;
 
 		@media (max-width: 959px) {
+			border-top: 1px solid #dfdfdf;
 			max-width: 100%;
-			padding: 20px
+			margin-top: 40px;
+			padding: 40px 20px 20px 20px;
 		}
 
 		h2 {
@@ -248,6 +255,14 @@ body.author .container{
 					display: block;
 				}
 			}
+		}
+
+		#show-all-news {
+			color: #006cb0;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			margin-top: 30px;
 		}
 	}
 }
